@@ -84,7 +84,7 @@ module.exports = function (options, callback) {
       if (err) return done(err);
 
       request
-        .post('https://www.google.com/speech-api/v2/recognize')
+        .post('https://speech.googleapis.com/v1beta1/speech:syncrecognize')
         .type('audio/x-flac; rate=' + opts.sampleRate)
         .parse(request.parse.text)
         .query({key: opts.key})
